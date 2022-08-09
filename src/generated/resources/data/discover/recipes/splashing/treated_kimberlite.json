@@ -1,0 +1,17 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "discover:treated_kimberlite"
+    }
+  ],
+  "results": [
+    {
+      "item": "discover:washed_kimberlite"
+    },
+    {
+      "item": "create:copper_nugget",
+      "chance": 0.05
+    }
+  ]
+}

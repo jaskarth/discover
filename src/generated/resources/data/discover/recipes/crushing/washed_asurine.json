@@ -1,0 +1,23 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "discover:washed_asurine"
+    }
+  ],
+  "results": [
+    {
+      "item": "create:crushed_zinc_ore",
+      "chance": 0.45
+    },
+    {
+      "item": "create:zinc_nugget",
+      "chance": 0.45
+    },
+    {
+      "item": "discover:sulfur",
+      "chance": 0.1
+    }
+  ],
+  "processingTime": 250
+}

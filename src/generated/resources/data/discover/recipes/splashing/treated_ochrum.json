@@ -1,0 +1,17 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "discover:treated_ochrum"
+    }
+  ],
+  "results": [
+    {
+      "item": "discover:washed_ochrum"
+    },
+    {
+      "item": "discover:sulfur",
+      "chance": 0.05
+    }
+  ]
+}

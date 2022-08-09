@@ -1,0 +1,23 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "discover:washed_kimberlite"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:diamond",
+      "chance": 0.005
+    },
+    {
+      "item": "minecraft:flint",
+      "chance": 0.05
+    },
+    {
+      "item": "minecraft:iron_nugget",
+      "chance": 0.02
+    }
+  ],
+  "processingTime": 250
+}

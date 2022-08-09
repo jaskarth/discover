@@ -1,0 +1,17 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "discover:treated_asurine"
+    }
+  ],
+  "results": [
+    {
+      "item": "discover:washed_asurine"
+    },
+    {
+      "item": "minecraft:iron_nugget",
+      "chance": 0.2
+    }
+  ]
+}

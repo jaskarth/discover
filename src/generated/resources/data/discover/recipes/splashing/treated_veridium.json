@@ -1,0 +1,17 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "discover:treated_veridium"
+    }
+  ],
+  "results": [
+    {
+      "item": "discover:washed_veridium"
+    },
+    {
+      "item": "create:zinc_nugget",
+      "chance": 0.3
+    }
+  ]
+}

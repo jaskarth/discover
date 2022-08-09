@@ -1,0 +1,22 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "discover:lignite"
+    }
+  ],
+  "results": [
+    {
+      "item": "discover:lignite_item"
+    },
+    {
+      "item": "discover:lignite_item",
+      "chance": 0.5
+    },
+    {
+      "item": "minecraft:coal",
+      "chance": 0.05
+    }
+  ],
+  "processingTime": 250
+}

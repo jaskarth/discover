@@ -1,0 +1,22 @@
+{
+  "block.discover.anthracite": "Anthracite",
+  "block.discover.kimberlite": "Kimberlite",
+  "block.discover.lignite": "Lignite",
+  "block.discover.sulfur_ore": "Brimstone Ore",
+  "fluid.discover.sulfuric_acid": "Oil Of Vitriol",
+  "item.discover.anthracite_item": "Anthracite Item",
+  "item.discover.constantan_ingot": "Induction Alloy Ingot",
+  "item.discover.lignite_item": "Lignite Item",
+  "item.discover.sulfur": "Brimstone",
+  "item.discover.treated_asurine": "Treated Asurine",
+  "item.discover.treated_crimsite": "Treated Crimsite",
+  "item.discover.treated_kimberlite": "Treated Kimberlite",
+  "item.discover.treated_ochrum": "Treated Ochrum",
+  "item.discover.treated_veridium": "Treated Veridium",
+  "item.discover.washed_asurine": "Washed Asurine",
+  "item.discover.washed_crimsite": "Washed Crimsite",
+  "item.discover.washed_kimberlite": "Washed Kimberlite",
+  "item.discover.washed_ochrum": "Washed Ochrum",
+  "item.discover.washed_veridium": "Washed Veridium",
+  "itemGroup.discover": "Discover"
+}

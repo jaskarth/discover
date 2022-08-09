@@ -1,0 +1,23 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "discover:washed_crimsite"
+    }
+  ],
+  "results": [
+    {
+      "item": "create:crushed_iron_ore",
+      "chance": 0.55
+    },
+    {
+      "item": "minecraft:iron_nugget",
+      "chance": 0.55
+    },
+    {
+      "item": "create:zinc_nugget",
+      "chance": 0.15
+    }
+  ],
+  "processingTime": 250
+}

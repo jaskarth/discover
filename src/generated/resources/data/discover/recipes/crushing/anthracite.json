@@ -1,0 +1,22 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "discover:anthracite"
+    }
+  ],
+  "results": [
+    {
+      "item": "discover:anthracite_item"
+    },
+    {
+      "item": "discover:anthracite_item",
+      "chance": 0.5
+    },
+    {
+      "item": "minecraft:coal",
+      "chance": 0.3
+    }
+  ],
+  "processingTime": 450
+}

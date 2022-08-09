@@ -1,0 +1,19 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "discover:kimberlite"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:flint",
+      "chance": 0.04
+    },
+    {
+      "item": "create:copper_nugget",
+      "chance": 0.02
+    }
+  ],
+  "processingTime": 250
+}

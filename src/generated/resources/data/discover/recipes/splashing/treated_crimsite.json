@@ -1,0 +1,17 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "discover:treated_crimsite"
+    }
+  ],
+  "results": [
+    {
+      "item": "discover:washed_crimsite"
+    },
+    {
+      "item": "minecraft:gold_nugget",
+      "chance": 0.1
+    }
+  ]
+}
