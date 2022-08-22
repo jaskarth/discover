@@ -1,6 +1,6 @@
 package supercoder79.discover.forge;
 
-import com.simibubi.create.repack.registrate.util.entry.BlockEntry;
+import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
