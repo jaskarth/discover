@@ -205,7 +205,7 @@ dependencies {
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
     def registrate = "com.tterrag.registrate:Registrate:MC${minecraft_version}-${registrate_version}"
-    implementation fg.deobf(registrate)
+    compileOnly fg.deobf(registrate)
     shade registrate
 }
 
@@ -228,4 +228,11 @@ jar.finalizedBy('reobfJar')
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
+}
+
+task exportRuntimeClasspath {
+    doLast {
+        def files = configurations.runtimeClasspath.resolve()
+        for (File file : files) println file.absolutePath
+    }
 }
