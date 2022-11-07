@@ -29,7 +29,7 @@ public class Discover {
     public static final DiscoverTab DISCOVER_TAB = new DiscoverTab();
 
     public Discover() {
-        System.out.println("Registering discover!");
+        LOGGER.info("Registering discover!");
         CreateRegistrate r = registrate.get();
         DiscoverBlocks.register(r);
         DiscoverItems.register(r);
