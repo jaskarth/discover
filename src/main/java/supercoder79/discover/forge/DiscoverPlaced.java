@@ -63,7 +63,7 @@ public class DiscoverPlaced {
 
         return PLACED.register("sulfur_ore", () -> new PlacedFeature(configured.getHolder().get(),
                 // TODO: needs minimum distance (region placement)
-                List.of(CountPlacement.of(10), InSquarePlacement.spread(), PlacementUtils.RANGE_10_10, BiomeFilter.biome())
+                List.of(CountPlacement.of(12), InSquarePlacement.spread(), PlacementUtils.RANGE_10_10, BiomeFilter.biome())
         ));
     }
 }

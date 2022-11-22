@@ -8,6 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -18,6 +19,7 @@ import org.slf4j.Logger;
 import supercoder79.discover.content.items.DiscoverTab;
 import supercoder79.discover.content.reg.DiscoverRegistrate;
 import supercoder79.discover.forge.*;
+import supercoder79.discover.forge.data.DiscoverBlockTags;
 import supercoder79.discover.forge.data.ExtraLangs;
 import supercoder79.discover.forge.data.recipe.DiscoverCraftingRecipes;
 import supercoder79.discover.forge.data.recipe.DiscoverMachineRecipes;
@@ -66,8 +68,11 @@ public class Discover {
 
     private void gatherDatagen(GatherDataEvent event) {
         DataGenerator gen = event.getGenerator();
+        ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+
         gen.addProvider(new ExtraLangs(gen));
         gen.addProvider(new DiscoverCraftingRecipes(gen));
+        gen.addProvider(new DiscoverBlockTags(gen, existingFileHelper));
 
         DiscoverMachineRecipes.register(gen);
     }

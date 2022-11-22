@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "discover:kimberlite",
+    "discover:lignite",
+    "discover:anthracite",
+    "discover:sulfur_ore"
+  ]
+}

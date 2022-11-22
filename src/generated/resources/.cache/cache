@@ -54,3 +54,6 @@ c2e9e12519c8b1fddb46062e6a969d2524f3c4e2 data/discover/recipes/mixing/sulfuric_a
 0250386f6bffc0c05851e9225f4f2ec8b109a633 data/discover/recipes/splashing/treated_kimberlite.json
 c99e89943be4db393359556bb24d969356b0a2bc data/discover/recipes/splashing/treated_ochrum.json
 1cb2eee7193b2d5756b0af41f9cf8374023145ea data/discover/recipes/splashing/treated_veridium.json
+ecc212598eb6d90471f9784b03d013df88fb14ae data/minecraft/tags/blocks/mineable/pickaxe.json
+98e1e1d423750a8e11df331d13cc47547ec0011c data/minecraft/tags/blocks/needs_iron_tool.json
+0f08130c653a8abde893891e46d6813149b0d815 data/minecraft/tags/blocks/needs_stone_tool.json
