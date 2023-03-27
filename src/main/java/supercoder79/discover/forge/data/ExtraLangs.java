@@ -1,6 +1,7 @@
 package supercoder79.discover.forge.data;
 
 import com.google.gson.*;
+import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.HashCache;
@@ -21,7 +22,7 @@ public class ExtraLangs implements DataProvider {
     }
 
     @Override
-    public void run(HashCache cache) throws IOException {
+    public void run(CachedOutput cache) throws IOException {
         Path path = this.gen.getOutputFolder()
                 .resolve("assets/discover/lang/en_us.json");
 
@@ -29,7 +30,7 @@ public class ExtraLangs implements DataProvider {
 
         addExtraLangs(langJson.getAsJsonObject());
 
-        DataProvider.save(GSON, cache, langJson, path);
+        DataProvider.saveStable(cache, langJson, path);
     }
 
     ////////////////////

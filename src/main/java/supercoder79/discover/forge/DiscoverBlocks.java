@@ -6,7 +6,7 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.OreBlock;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
@@ -18,7 +18,7 @@ public class DiscoverBlocks {
     public static BlockEntry<Block> KIMBERLITE;
     public static BlockEntry<Block> ANTHRACITE;
     public static BlockEntry<Block> LIGNITE;
-    public static BlockEntry<OreBlock> SULFUR_ORE;
+    public static BlockEntry<DropExperienceBlock> SULFUR_ORE;
 
     public static void register(CreateRegistrate registrate) {
         registrate = registrate.creativeModeTab(() -> Discover.DISCOVER_TAB);
@@ -35,7 +35,7 @@ public class DiscoverBlocks {
                 p -> p.strength(1.25f, 3.0f).requiresCorrectToolForDrops()
         ).defaultLoot().simpleItem().register();
 
-        SULFUR_ORE = registrate.block("sulfur_ore", p -> new OreBlock(p, UniformInt.of(2, 5))).properties(
+        SULFUR_ORE = registrate.block("sulfur_ore", p -> new DropExperienceBlock(p, UniformInt.of(2, 5))).properties(
                 p -> p.strength(3.0F, 3.0F).sound(SoundType.NETHER_ORE).requiresCorrectToolForDrops()
         ).loot((lt, b) -> lt.add(b,
                         RegistrateBlockLootTables.createSilkTouchDispatchTable(b,

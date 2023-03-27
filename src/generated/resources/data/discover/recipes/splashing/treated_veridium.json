@@ -10,8 +10,8 @@
       "item": "discover:washed_veridium"
     },
     {
-      "item": "create:zinc_nugget",
-      "chance": 0.3
+      "chance": 0.3,
+      "item": "create:zinc_nugget"
     }
   ]
 }

@@ -10,8 +10,8 @@
       "item": "discover:washed_kimberlite"
     },
     {
-      "item": "create:copper_nugget",
-      "chance": 0.05
+      "chance": 0.05,
+      "item": "create:copper_nugget"
     }
   ]
 }

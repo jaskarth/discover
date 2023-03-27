@@ -5,9 +5,9 @@
       "item": "create:crimsite"
     },
     {
+      "amount": 50,
       "fluid": "discover:sulfuric_acid",
-      "nbt": {},
-      "amount": 50
+      "nbt": {}
     }
   ],
   "results": [

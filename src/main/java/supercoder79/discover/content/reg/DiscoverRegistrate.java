@@ -24,6 +24,6 @@ public class DiscoverRegistrate extends CreateRegistrate {
     public FluidBuilder<VirtualFluid, CreateRegistrate> virtualFluid(String name) {
         return entry(name,
                 c -> new VirtualFluidBuilder<>(self(), self(), name, c, Discover.id("fluid/" + name + "_still"),
-                        Discover.id("fluid/" + name + "_flow"), null, VirtualFluid::new));
+                        Discover.id("fluid/" + name + "_flow"), CreateRegistrate::defaultFluidType, VirtualFluid::new));
     }
 }

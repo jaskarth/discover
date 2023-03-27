@@ -5,15 +5,15 @@
       "item": "discover:kimberlite"
     }
   ],
+  "processingTime": 250,
   "results": [
     {
-      "item": "minecraft:flint",
-      "chance": 0.04
+      "chance": 0.04,
+      "item": "minecraft:flint"
     },
     {
-      "item": "create:copper_nugget",
-      "chance": 0.02
+      "chance": 0.02,
+      "item": "create:copper_nugget"
     }
-  ],
-  "processingTime": 250
+  ]
 }

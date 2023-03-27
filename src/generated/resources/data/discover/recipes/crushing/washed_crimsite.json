@@ -5,19 +5,19 @@
       "item": "discover:washed_crimsite"
     }
   ],
+  "processingTime": 250,
   "results": [
     {
-      "item": "create:crushed_iron_ore",
-      "chance": 0.55
+      "chance": 0.55,
+      "item": "create:crushed_iron_ore"
     },
     {
-      "item": "minecraft:iron_nugget",
-      "chance": 0.55
+      "chance": 0.55,
+      "item": "minecraft:iron_nugget"
     },
     {
-      "item": "create:zinc_nugget",
-      "chance": 0.15
+      "chance": 0.15,
+      "item": "create:zinc_nugget"
     }
-  ],
-  "processingTime": 250
+  ]
 }

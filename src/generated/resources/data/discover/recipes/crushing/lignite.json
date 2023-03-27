@@ -5,18 +5,18 @@
       "item": "discover:lignite"
     }
   ],
+  "processingTime": 250,
   "results": [
     {
       "item": "discover:lignite_item"
     },
     {
-      "item": "discover:lignite_item",
-      "chance": 0.5
+      "chance": 0.5,
+      "item": "discover:lignite_item"
     },
     {
-      "item": "minecraft:coal",
-      "chance": 0.05
+      "chance": 0.05,
+      "item": "minecraft:coal"
     }
-  ],
-  "processingTime": 250
+  ]
 }

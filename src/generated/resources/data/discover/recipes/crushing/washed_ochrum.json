@@ -5,19 +5,19 @@
       "item": "discover:washed_ochrum"
     }
   ],
+  "processingTime": 250,
   "results": [
     {
-      "item": "create:crushed_gold_ore",
-      "chance": 0.35
+      "chance": 0.35,
+      "item": "create:crushed_gold_ore"
     },
     {
-      "item": "minecraft:gold_nugget",
-      "chance": 0.35
+      "chance": 0.35,
+      "item": "minecraft:gold_nugget"
     },
     {
-      "item": "create:copper_nugget",
-      "chance": 0.2
+      "chance": 0.2,
+      "item": "create:copper_nugget"
     }
-  ],
-  "processingTime": 250
+  ]
 }

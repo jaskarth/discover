@@ -3,6 +3,7 @@ package supercoder79.discover.content.worldgen.feature;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -12,8 +13,6 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 
-import java.util.Random;
-
 public class CoalLayerFeature extends Feature<CoalLayerConfig> {
     public CoalLayerFeature(Codec<CoalLayerConfig> p_65786_) {
         super(p_65786_);
@@ -22,7 +21,7 @@ public class CoalLayerFeature extends Feature<CoalLayerConfig> {
     @Override
     public boolean place(FeaturePlaceContext<CoalLayerConfig> context) {
         WorldGenLevel world = context.level();
-        Random random = context.random();
+        RandomSource random = context.random();
         BlockPos pos = context.origin();
 
         int radius = 16;

@@ -10,8 +10,8 @@
       "item": "discover:washed_ochrum"
     },
     {
-      "item": "discover:sulfur",
-      "chance": 0.05
+      "chance": 0.05,
+      "item": "discover:sulfur"
     }
   ]
 }

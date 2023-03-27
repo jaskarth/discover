@@ -5,19 +5,19 @@
       "item": "discover:washed_veridium"
     }
   ],
+  "processingTime": 250,
   "results": [
     {
-      "item": "create:crushed_copper_ore",
-      "chance": 0.9
+      "chance": 0.9,
+      "item": "create:crushed_copper_ore"
     },
     {
-      "item": "create:copper_nugget",
-      "chance": 0.9
+      "chance": 0.9,
+      "item": "create:copper_nugget"
     },
     {
-      "item": "discover:sulfur",
-      "chance": 0.1
+      "chance": 0.1,
+      "item": "discover:sulfur"
     }
-  ],
-  "processingTime": 250
+  ]
 }

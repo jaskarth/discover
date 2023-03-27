@@ -10,8 +10,8 @@
       "item": "discover:washed_asurine"
     },
     {
-      "item": "minecraft:iron_nugget",
-      "chance": 0.2
+      "chance": 0.2,
+      "item": "minecraft:iron_nugget"
     }
   ]
 }

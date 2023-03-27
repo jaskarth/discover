@@ -10,8 +10,8 @@
       "item": "discover:washed_crimsite"
     },
     {
-      "item": "minecraft:gold_nugget",
-      "chance": 0.1
+      "chance": 0.1,
+      "item": "minecraft:gold_nugget"
     }
   ]
 }

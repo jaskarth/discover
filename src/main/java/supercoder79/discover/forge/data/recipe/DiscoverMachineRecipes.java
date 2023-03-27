@@ -4,12 +4,14 @@ import com.simibubi.create.content.contraptions.processing.ProcessingRecipe;
 import com.simibubi.create.content.contraptions.processing.ProcessingRecipeBuilder;
 import com.simibubi.create.content.contraptions.processing.ProcessingRecipeSerializer;
 import com.simibubi.create.foundation.utility.recipe.IRecipeTypeInfo;
+import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.HashCache;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.registries.ForgeRegistries;
 import supercoder79.discover.Discover;
 import supercoder79.discover.forge.data.recipe.system.DiscoverRecipeProvider;
 
@@ -31,7 +33,7 @@ public abstract class DiscoverMachineRecipes extends DiscoverRecipeProvider {
 		GENERATORS.add(new DiscoverSpoutRecipes(gen));
 		GENERATORS.add(new DiscoverWashingRecipes(gen));
 
-		gen.addProvider(new DataProvider() {
+		gen.addProvider(true, new DataProvider() {
 
 			@Override
 			public String getName() {
@@ -39,7 +41,7 @@ public abstract class DiscoverMachineRecipes extends DiscoverRecipeProvider {
 			}
 
 			@Override
-			public void run(HashCache cache) throws IOException {
+			public void run(CachedOutput cache) throws IOException {
 				GENERATORS.forEach(g -> {
 					try {
 						g.run(cache);
@@ -66,8 +68,7 @@ public abstract class DiscoverMachineRecipes extends DiscoverRecipeProvider {
 			ItemLike iItemProvider = singleIngredient.get();
 			transform
 				.apply(new ProcessingRecipeBuilder<>(serializer.getFactory(),
-					new ResourceLocation(namespace, iItemProvider.asItem()
-						.getRegistryName()
+					new ResourceLocation(namespace, ForgeRegistries.ITEMS.getKey(iItemProvider.asItem())
 						.getPath())).withItemIngredients(Ingredient.of(iItemProvider)))
 				.build(c);
 		};
@@ -120,9 +121,7 @@ public abstract class DiscoverMachineRecipes extends DiscoverRecipeProvider {
 
 	protected Supplier<ResourceLocation> idWithSuffix(Supplier<ItemLike> item, String suffix) {
 		return () -> {
-			ResourceLocation registryName = item.get()
-				.asItem()
-				.getRegistryName();
+			ResourceLocation registryName = ForgeRegistries.ITEMS.getKey(item.get().asItem());
 			return Discover.id(registryName.getPath() + suffix);
 		};
 	}

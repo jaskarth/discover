@@ -3,6 +3,7 @@ package supercoder79.discover.content.worldgen.feature;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -25,7 +26,7 @@ public class KimberlitePipeFeature extends Feature<NoneFeatureConfiguration> {
     @Override
     public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
         WorldGenLevel world = context.level();
-        Random random = context.random();
+        RandomSource random = context.random();
         BlockPos pos = context.origin();
 
 //        System.out.println("-------------- " + pos);
@@ -89,7 +90,7 @@ public class KimberlitePipeFeature extends Feature<NoneFeatureConfiguration> {
     }
 
     // Nullable
-    private static BlockState buildState(int y, Random random) {
+    private static BlockState buildState(int y, RandomSource random) {
         if (y < -8) {
             if (random.nextInt(320) == 0) {
                 return Blocks.DEEPSLATE_DIAMOND_ORE.defaultBlockState();

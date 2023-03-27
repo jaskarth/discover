@@ -5,18 +5,18 @@
       "item": "discover:anthracite"
     }
   ],
+  "processingTime": 450,
   "results": [
     {
       "item": "discover:anthracite_item"
     },
     {
-      "item": "discover:anthracite_item",
-      "chance": 0.5
+      "chance": 0.5,
+      "item": "discover:anthracite_item"
     },
     {
-      "item": "minecraft:coal",
-      "chance": 0.3
+      "chance": 0.3,
+      "item": "minecraft:coal"
     }
-  ],
-  "processingTime": 450
+  ]
 }
