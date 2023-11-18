@@ -1,6 +1,6 @@
 package supercoder79.discover.forge;
 
-import com.simibubi.create.content.contraptions.fluids.VirtualFluid;
+import com.simibubi.create.content.fluids.VirtualFluid;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.entry.FluidEntry;
 

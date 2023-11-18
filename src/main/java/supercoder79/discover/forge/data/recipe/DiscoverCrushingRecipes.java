@@ -2,8 +2,9 @@ package supercoder79.discover.forge.data.recipe;
 
 import com.simibubi.create.AllItems;
 import com.simibubi.create.AllRecipeTypes;
-import com.simibubi.create.foundation.utility.recipe.IRecipeTypeInfo;
+import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import supercoder79.discover.Discover;
@@ -74,7 +75,7 @@ public class DiscoverCrushingRecipes extends DiscoverMachineRecipes {
             .output(0.05f, Items.COAL, 1)
     );
 
-    public DiscoverCrushingRecipes(DataGenerator generator) {
+    public DiscoverCrushingRecipes(PackOutput generator) {
         super(generator);
     }
 

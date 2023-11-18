@@ -1,62 +1,51 @@
 package supercoder79.discover;
 
-import com.google.gson.JsonElement;
 import com.mojang.logging.LogUtils;
-import com.mojang.serialization.JsonOps;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
-import net.minecraft.core.HolderSet;
-import net.minecraft.core.Registry;
-import net.minecraft.core.RegistryAccess;
+import net.minecraft.Util;
+import net.minecraft.core.*;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.resources.RegistryOps;
-import net.minecraft.resources.ResourceKey;
+import net.minecraft.data.registries.VanillaRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BiomeTags;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.common.data.JsonCodecProvider;
-import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
-import net.minecraftforge.common.world.BiomeModifier;
-import net.minecraftforge.common.world.ForgeBiomeModifiers;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 import supercoder79.discover.content.items.DiscoverTab;
 import supercoder79.discover.content.reg.DiscoverRegistrate;
 import supercoder79.discover.forge.*;
 import supercoder79.discover.forge.data.DiscoverBlockTags;
+import supercoder79.discover.forge.data.DiscoverDynamicProvider;
 import supercoder79.discover.forge.data.ExtraLangs;
 import supercoder79.discover.forge.data.recipe.DiscoverCraftingRecipes;
 import supercoder79.discover.forge.data.recipe.DiscoverMachineRecipes;
 
-import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 @Mod("discover")
 public class Discover {
     public static final Logger LOGGER = LogUtils.getLogger();
-    public static final NonNullSupplier<CreateRegistrate> registrate = DiscoverRegistrate.discover("discover");
-    public static final DiscoverTab DISCOVER_TAB = new DiscoverTab();
+    public static final NonNullSupplier<CreateRegistrate> REGISTRATE = DiscoverRegistrate.discover("discover");
 
 
     public Discover() {
         LOGGER.info("Registering discover!");
-        CreateRegistrate r = registrate.get();
+
+        IEventBus b = FMLJavaModLoadingContext.get().getModEventBus();
+        DiscoverTab.REGISTER.register(b);
+
+        CreateRegistrate r = REGISTRATE.get();
         DiscoverBlocks.register(r);
         DiscoverItems.register(r);
         DiscoverFluids.register(r);
 
-        IEventBus b = FMLJavaModLoadingContext.get().getModEventBus();
         DiscoverFeatures.register(b);
-        DiscoverPlaced.register(b);
 
         IEventBus f = MinecraftForge.EVENT_BUS;
-        registrate.get().registerEventListeners(b);
 //        f.addListener(this::onBiomeLoad);
 
         b.addListener(this::gatherDatagen);
@@ -84,43 +73,13 @@ public class Discover {
     private void gatherDatagen(GatherDataEvent event) {
         DataGenerator gen = event.getGenerator();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-        RegistryOps<JsonElement> ops = RegistryOps.create(JsonOps.INSTANCE, RegistryAccess.builtinCopy());
+        CompletableFuture<HolderLookup.Provider> provider = CompletableFuture.supplyAsync(VanillaRegistries::createLookup, Util.backgroundExecutor());
 
-        BiomeModifier addSulfur = new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-            new HolderSet.Named<>(ops.registry(Registry.BIOME_REGISTRY).get(), BiomeTags.IS_NETHER),
-            HolderSet.direct(ops.registry(Registry.PLACED_FEATURE_REGISTRY).get()
-                    .getOrCreateHolderOrThrow(ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, DiscoverPlaced.SULFUR_ORE_PLACED.getId()))),
-            GenerationStep.Decoration.RAW_GENERATION);
+        gen.addProvider(event.includeServer(), new DiscoverDynamicProvider(gen.getPackOutput(), provider));
 
-        BiomeModifier addKimberlite = new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                new HolderSet.Named<>(ops.registry(Registry.BIOME_REGISTRY).get(), BiomeTags.IS_OVERWORLD),
-                HolderSet.direct(ops.registry(Registry.PLACED_FEATURE_REGISTRY).get()
-                        .getOrCreateHolderOrThrow(ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, DiscoverPlaced.KIMBERLITE_PLACED.getId()))),
-                GenerationStep.Decoration.RAW_GENERATION);
-
-        BiomeModifier addAnthracite = new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                new HolderSet.Named<>(ops.registry(Registry.BIOME_REGISTRY).get(), BiomeTags.IS_OVERWORLD),
-                HolderSet.direct(ops.registry(Registry.PLACED_FEATURE_REGISTRY).get()
-                        .getOrCreateHolderOrThrow(ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, DiscoverPlaced.ANTHRACITE_PLACED.getId()))),
-                GenerationStep.Decoration.RAW_GENERATION);
-
-        BiomeModifier addLignite = new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                new HolderSet.Named<>(ops.registry(Registry.BIOME_REGISTRY).get(), BiomeTags.IS_OVERWORLD),
-                HolderSet.direct(ops.registry(Registry.PLACED_FEATURE_REGISTRY).get()
-                        .getOrCreateHolderOrThrow(ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, DiscoverPlaced.LIGNITE_PLACED.getId()))),
-                GenerationStep.Decoration.RAW_GENERATION);
-
-        gen.addProvider(event.includeServer(), JsonCodecProvider.forDatapackRegistry(
-                gen, existingFileHelper, "discover", ops, ForgeRegistries.Keys.BIOME_MODIFIERS, Map.of(
-                        id("add_sulfur"), addSulfur,
-                        id("add_kimberlite"), addKimberlite,
-                        id("add_anthracite"), addAnthracite,
-                        id("add_lignite"), addLignite
-                )));
-
-        gen.addProvider(event.includeServer(), new ExtraLangs(gen));
-        gen.addProvider(event.includeServer(), new DiscoverCraftingRecipes(gen));
-        gen.addProvider(event.includeServer(), new DiscoverBlockTags(gen, existingFileHelper));
+        gen.addProvider(event.includeServer(), new ExtraLangs(gen.getPackOutput()));
+        gen.addProvider(event.includeServer(), new DiscoverCraftingRecipes(gen.getPackOutput()));
+        gen.addProvider(event.includeServer(), new DiscoverBlockTags(gen.getPackOutput(), provider, existingFileHelper));
 
         DiscoverMachineRecipes.register(gen);
     }

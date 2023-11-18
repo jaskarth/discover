@@ -1,0 +1,9 @@
+{
+  "type": "discover:coal_layer",
+  "config": {
+    "state": {
+      "Name": "discover:lignite"
+    },
+    "value": 97
+  }
+}

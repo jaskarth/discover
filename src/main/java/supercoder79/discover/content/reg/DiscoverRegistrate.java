@@ -1,7 +1,7 @@
 package supercoder79.discover.content.reg;
 
 import com.simibubi.create.Create;
-import com.simibubi.create.content.contraptions.fluids.VirtualFluid;
+import com.simibubi.create.content.fluids.VirtualFluid;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.VirtualFluidBuilder;
 import com.tterrag.registrate.builders.FluidBuilder;

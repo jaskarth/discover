@@ -1,5 +1,5 @@
-// 1.19.2	2023-03-27T12:05:17.8053532	Recipes
-8c6271cc3e37c46937b332fb15ccbe43ff05c133 data/discover/advancements/recipes/decorations/anthracite_torch.json
-35d1d82ad260070366642e1d4998b17e55780db3 data/discover/advancements/recipes/decorations/lignite_torch.json
+// 1.20.1	2023-11-18T01:02:50.916211426	Recipes
+2e0d7c946fd7811f09bdfb4e6eeb3b0106dc0184 data/discover/advancements/recipes/anthracite_torch.json
+f11e524ad641de13305a6c70ec35c7c627b7e832 data/discover/advancements/recipes/lignite_torch.json
 a7a369a8acf2d0a562101595608bf9926c3d78a4 data/discover/recipes/anthracite_torch.json
 8284b1e417e545b3aa96dffb28e40016dd378719 data/discover/recipes/lignite_torch.json

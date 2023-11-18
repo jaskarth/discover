@@ -1,10 +1,11 @@
 package supercoder79.discover.forge.data.recipe;
 
 import com.simibubi.create.AllRecipeTypes;
-import com.simibubi.create.content.contraptions.processing.HeatCondition;
+import com.simibubi.create.content.processing.recipe.HeatCondition;
 import com.simibubi.create.foundation.data.recipe.CreateRecipeProvider;
-import com.simibubi.create.foundation.utility.recipe.IRecipeTypeInfo;
+import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.material.Fluids;
 import supercoder79.discover.forge.DiscoverFluids;
 import supercoder79.discover.forge.DiscoverItems;
@@ -16,7 +17,7 @@ public class DiscoverMixingRecipes extends DiscoverMachineRecipes {
             .output(DiscoverFluids.SULFURIC_ACID.get(), 500)
             .requiresHeat(HeatCondition.HEATED));
 
-    public DiscoverMixingRecipes(DataGenerator generator) {
+    public DiscoverMixingRecipes(PackOutput generator) {
         super(generator);
     }
 

@@ -13,6 +13,7 @@ import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import supercoder79.discover.Discover;
+import supercoder79.discover.content.items.DiscoverTab;
 
 public class DiscoverBlocks {
     public static BlockEntry<Block> KIMBERLITE;
@@ -21,7 +22,7 @@ public class DiscoverBlocks {
     public static BlockEntry<DropExperienceBlock> SULFUR_ORE;
 
     public static void register(CreateRegistrate registrate) {
-        registrate = registrate.creativeModeTab(() -> Discover.DISCOVER_TAB);
+        registrate = registrate.setCreativeTab(DiscoverTab.TAB);
 
         KIMBERLITE = registrate.block("kimberlite", Block::new).properties(
                 p -> p.strength(4.5f, 6.0f).requiresCorrectToolForDrops()
@@ -39,7 +40,7 @@ public class DiscoverBlocks {
                 p -> p.strength(3.0F, 3.0F).sound(SoundType.NETHER_ORE).requiresCorrectToolForDrops()
         ).loot((lt, b) -> lt.add(b,
                         RegistrateBlockLootTables.createSilkTouchDispatchTable(b,
-                                RegistrateBlockLootTables.applyExplosionDecay(b,
+                                lt.applyExplosionDecay(b,
                                         LootItem.lootTableItem(DiscoverItems.SULFUR.get())
                                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 3.0F)))
                                         .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))))))

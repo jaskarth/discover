@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "discover:lignite_torch"
+        "recipe": "discover:anthracite_torch"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,8 @@
   ],
   "rewards": {
     "recipes": [
-      "discover:lignite_torch"
+      "discover:anthracite_torch"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

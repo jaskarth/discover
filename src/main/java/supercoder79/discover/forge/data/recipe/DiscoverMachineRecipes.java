@@ -1,13 +1,10 @@
 package supercoder79.discover.forge.data.recipe;
 
-import com.simibubi.create.content.contraptions.processing.ProcessingRecipe;
-import com.simibubi.create.content.contraptions.processing.ProcessingRecipeBuilder;
-import com.simibubi.create.content.contraptions.processing.ProcessingRecipeSerializer;
-import com.simibubi.create.foundation.utility.recipe.IRecipeTypeInfo;
-import net.minecraft.data.CachedOutput;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.DataProvider;
-import net.minecraft.data.HashCache;
+import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
+import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
+import com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer;
+import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
+import net.minecraft.data.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
@@ -18,6 +15,7 @@ import supercoder79.discover.forge.data.recipe.system.DiscoverRecipeProvider;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
@@ -28,10 +26,11 @@ public abstract class DiscoverMachineRecipes extends DiscoverRecipeProvider {
 	protected static final List<DiscoverMachineRecipes> GENERATORS = new ArrayList<>();
 
 	public static void register(DataGenerator gen) {
-		GENERATORS.add(new DiscoverMixingRecipes(gen));
-		GENERATORS.add(new DiscoverCrushingRecipes(gen));
-		GENERATORS.add(new DiscoverSpoutRecipes(gen));
-		GENERATORS.add(new DiscoverWashingRecipes(gen));
+		PackOutput out = gen.getPackOutput();
+		GENERATORS.add(new DiscoverMixingRecipes(out));
+		GENERATORS.add(new DiscoverCrushingRecipes(out));
+		GENERATORS.add(new DiscoverSpoutRecipes(out));
+		GENERATORS.add(new DiscoverWashingRecipes(out));
 
 		gen.addProvider(true, new DataProvider() {
 
@@ -41,7 +40,7 @@ public abstract class DiscoverMachineRecipes extends DiscoverRecipeProvider {
 			}
 
 			@Override
-			public void run(CachedOutput cache) throws IOException {
+			public CompletableFuture<?> run(CachedOutput cache) {
 				GENERATORS.forEach(g -> {
 					try {
 						g.run(cache);
@@ -49,11 +48,12 @@ public abstract class DiscoverMachineRecipes extends DiscoverRecipeProvider {
 						e.printStackTrace();
 					}
 				});
+				return CompletableFuture.completedFuture(null);
 			}
 		});
 	}
 
-	public DiscoverMachineRecipes(DataGenerator generator) {
+	public DiscoverMachineRecipes(PackOutput generator) {
 		super(generator);
 	}
 
@@ -126,10 +126,10 @@ public abstract class DiscoverMachineRecipes extends DiscoverRecipeProvider {
 		};
 	}
 
-	@Override
-	public String getName() {
-		return "Discover's Machine Recipes: " + getRecipeType().getId()
-			.getPath();
-	}
+//	@Override
+//	public String getName() {
+//		return "Discover's Machine Recipes: " + getRecipeType().getId()
+//			.getPath();
+//	}
 
 }

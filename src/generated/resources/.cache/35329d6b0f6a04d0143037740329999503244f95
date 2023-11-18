@@ -1,13 +1,13 @@
-// 1.19.2	2023-03-27T12:05:17.8033551	Discover's Machine Recipes
+// 1.20.1	2023-11-18T01:11:23.588599339	Discover's Machine Recipes
 c626cf3c3c1c8937c2ec408a30fb32efd5ac71c6 data/discover/recipes/crushing/anthracite.json
 770783c10280f8ef05d39a23b75e61558b74177e data/discover/recipes/crushing/kimberlite.json
 e95017bc594b7f9e26b7ce1082c342a26aa85212 data/discover/recipes/crushing/lignite.json
 d7d335cfdb24c0170b3b08f8d2bb524909a5082c data/discover/recipes/crushing/sulfur_ore.json
-0bcf3914dd1ba06bf670d7127ee5821baa7210d2 data/discover/recipes/crushing/washed_asurine.json
-c5fef5dde4ba2eb176eeac8f2223cd624d743349 data/discover/recipes/crushing/washed_crimsite.json
+958516576b4e9489249daed566c048b3a98e2089 data/discover/recipes/crushing/washed_asurine.json
+d541fc7dccc32c07eafccb2e4975690616c7ee31 data/discover/recipes/crushing/washed_crimsite.json
 1de86b875f8e2c5a340c4851e3130e0b78bcd02b data/discover/recipes/crushing/washed_kimberlite.json
-b0e179c8a99c513501ed8e44e6851a019f4de1bb data/discover/recipes/crushing/washed_ochrum.json
-1ba87442205ac69580740bb82bc0da7adba9e83c data/discover/recipes/crushing/washed_veridium.json
+fd24c05aa3996a027f73bf4c32d937f82ffb1899 data/discover/recipes/crushing/washed_ochrum.json
+ca3568c3aec6f55d445c0c8ebce2ed16883ab3ea data/discover/recipes/crushing/washed_veridium.json
 3e8a999ec0d56690b5dfcc517658adc264147093 data/discover/recipes/filling/treated_asurine.json
 6519ee4158df01f3fffb55b22f97398e8439ca68 data/discover/recipes/filling/treated_crimsite.json
 641aafd05bd9bdfe22cfe02f2d9154d02c3ce1db data/discover/recipes/filling/treated_kimberlite.json
@@ -18,4 +18,3 @@ d66fb8c2abef013ff9774d5a86fe900251dd07ed data/discover/recipes/mixing/sulfuric_a
 cdbc9c52df783c6ad0f0dad5bba81426fcc78d0d data/discover/recipes/splashing/treated_crimsite.json
 e3464e6643e838e9b01c46eef5b526d7fc1b01dd data/discover/recipes/splashing/treated_kimberlite.json
 f77384fca16c3a122627e1b51213bb829a38ad21 data/discover/recipes/splashing/treated_ochrum.json
-1e35857bb5f7691c7fe069b7806c78bc1d32177e data/discover/recipes/splashing/treated_veridium.json

@@ -1,9 +1,10 @@
 package supercoder79.discover.forge.data.recipe;
 
 import com.simibubi.create.AllRecipeTypes;
-import com.simibubi.create.content.palettes.AllPaletteStoneTypes;
-import com.simibubi.create.foundation.utility.recipe.IRecipeTypeInfo;
+import com.simibubi.create.content.decoration.palettes.AllPaletteStoneTypes;
+import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import supercoder79.discover.forge.DiscoverBlocks;
 import supercoder79.discover.forge.DiscoverFluids;
 import supercoder79.discover.forge.DiscoverItems;
@@ -30,7 +31,7 @@ public class DiscoverSpoutRecipes extends DiscoverMachineRecipes {
             .require(DiscoverBlocks.KIMBERLITE.get())
             .output(DiscoverItems.TREATED_KIMBERLITE.get()));
 
-    public DiscoverSpoutRecipes(DataGenerator generator) {
+    public DiscoverSpoutRecipes(PackOutput generator) {
         super(generator);
     }
 

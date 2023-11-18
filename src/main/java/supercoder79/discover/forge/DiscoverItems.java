@@ -1,10 +1,11 @@
 package supercoder79.discover.forge;
 
-import com.simibubi.create.content.curiosities.CombustibleItem;
 import com.simibubi.create.foundation.data.CreateRegistrate;
+import com.simibubi.create.foundation.item.CombustibleItem;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.world.item.Item;
 import supercoder79.discover.Discover;
+import supercoder79.discover.content.items.DiscoverTab;
 
 public class DiscoverItems {
 
@@ -27,7 +28,7 @@ public class DiscoverItems {
     public static ItemEntry<CombustibleItem> LIGNITE;
 
     public static void register(CreateRegistrate registrate) {
-        registrate = registrate.creativeModeTab(() -> Discover.DISCOVER_TAB);
+        registrate = registrate.setCreativeTab(DiscoverTab.TAB);
 
         CONSTANTAN_INGOT = registrate.item("constantan_ingot", Item::new)
                 .lang("Induction Alloy Ingot")

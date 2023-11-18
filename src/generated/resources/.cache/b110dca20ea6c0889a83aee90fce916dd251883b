@@ -1,4 +1,4 @@
-// 1.19.2	2023-03-27T12:05:17.8083522	Registrate Provider for discover [Recipes, Advancements, Loot tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2023-11-18T01:02:50.913676394	Registrate Provider for discover [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 02bb13e374aa9edb8cf8709302bf19f0bb1877db assets/discover/blockstates/anthracite.json
 5f13553670d6608c759038bcaa49186f386ad1f8 assets/discover/blockstates/kimberlite.json
 574cb965d32e7030b96a048129e2a0d86ec0c680 assets/discover/blockstates/lignite.json
@@ -27,7 +27,7 @@ f89051c4a5b2f52b04b9c71d254e0758f55d3b1d assets/discover/models/item/washed_crim
 df67d5c6832202f0c6b11ff88036e80bf23708bd assets/discover/models/item/washed_kimberlite.json
 17716f08e98434cf00d906a220a0977b40fa3716 assets/discover/models/item/washed_ochrum.json
 760f51e5e5d547ae5873eaea30f4a3defef5fa9d assets/discover/models/item/washed_veridium.json
-ae428fa4b4c9d7411b50481b7cf183b58742b3c7 data/discover/loot_tables/blocks/anthracite.json
-84a8f1fecf2a51facc292bdf7af180c6138b7d38 data/discover/loot_tables/blocks/kimberlite.json
-0bcaa8985b1f4f52f676f87e2db1984200f6943e data/discover/loot_tables/blocks/lignite.json
-ed11a18b1e122b4db01eda9e0e6dd9803d834a14 data/discover/loot_tables/blocks/sulfur_ore.json
+13e7598790e4153da53d4108c540529ada3380d0 data/discover/loot_tables/blocks/anthracite.json
+1c182a918cd7b5de773103784cb2ec7d00cd75dc data/discover/loot_tables/blocks/kimberlite.json
+75f2cebbc9d1c6e0978a2865d5388d2a5e7d9d12 data/discover/loot_tables/blocks/lignite.json
+d949c28da418c270091792ba244084c6a46bf0df data/discover/loot_tables/blocks/sulfur_ore.json

@@ -2,8 +2,9 @@ package supercoder79.discover.forge.data.recipe;
 
 import com.simibubi.create.AllItems;
 import com.simibubi.create.AllRecipeTypes;
-import com.simibubi.create.foundation.utility.recipe.IRecipeTypeInfo;
+import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Items;
 import supercoder79.discover.forge.DiscoverItems;
 
@@ -28,7 +29,7 @@ public class DiscoverWashingRecipes extends DiscoverMachineRecipes {
             .output(DiscoverItems.WASHED_KIMBERLITE.get())
             .output(0.05f, AllItems.COPPER_NUGGET.get()));
 
-    public DiscoverWashingRecipes(DataGenerator generator) {
+    public DiscoverWashingRecipes(PackOutput generator) {
         super(generator);
     }
 

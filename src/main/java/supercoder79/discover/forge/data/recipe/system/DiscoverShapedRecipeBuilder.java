@@ -17,6 +17,8 @@ import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
@@ -114,7 +116,7 @@ public class DiscoverShapedRecipeBuilder implements RecipeBuilder {
               this.key,
               this.advancement,
               // TODO: fix recipe folder
-              new ResourceLocation(p_126142_.getNamespace(), "recipes/" + this.result.getItemCategory().getRecipeFolderName() + "/" + p_126142_.getPath())));
+              new ResourceLocation(p_126142_.getNamespace(), "recipes/" + p_126142_.getPath())));
    }
 
    private void ensureValid(ResourceLocation p_126144_) {
@@ -186,7 +188,7 @@ public class DiscoverShapedRecipeBuilder implements RecipeBuilder {
 
          p_126167_.add("key", jsonobject);
          JsonObject jsonobject1 = new JsonObject();
-         jsonobject1.addProperty("item", Registry.ITEM.getKey(this.result).toString());
+         jsonobject1.addProperty("item", BuiltInRegistries.ITEM.getKey(this.result).toString());
          if (this.count > 1) {
             jsonobject1.addProperty("count", this.count);
          }

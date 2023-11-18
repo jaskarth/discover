@@ -1,0 +1,9 @@
+// 1.20.1	2023-11-18T01:02:50.915871548	Dynamic registry content
+9dce6a526183a53385190285818ce385355f3159 data/discover/worldgen/configured_feature/anthracite.json
+5ecaacea77df6efaf0b1e0e24028581ab98b053e data/discover/worldgen/configured_feature/kimberlite_pipe.json
+f669b859b510f930c44400e4e54407af9bd17408 data/discover/worldgen/configured_feature/lignite.json
+5f318ada14a615fcc050c1ce9096af0b34e32f96 data/discover/worldgen/configured_feature/sulfur_ore.json
+f33afbd718c053c1878d60414a076b48c7e2efdd data/discover/worldgen/placed_feature/anthracite.json
+603eb4f76f969b212f918a542678cb995ec6e317 data/discover/worldgen/placed_feature/kimberlite_pipe.json
+6a0da4950867e2b3377fe470c51683b99d7024d5 data/discover/worldgen/placed_feature/lignite.json
+c38d39c1d8c5bc54b5493c2644d5c16b626f9128 data/discover/worldgen/placed_feature/sulfur_ore.json

@@ -1,6 +1,7 @@
 package supercoder79.discover.forge.data.recipe;
 
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.item.Items;
@@ -13,12 +14,12 @@ import supercoder79.discover.forge.data.recipe.system.DiscoverShapedRecipeBuilde
 import java.util.function.Consumer;
 
 public class DiscoverCraftingRecipes extends DiscoverRecipeProvider {
-    public DiscoverCraftingRecipes(DataGenerator generator) {
-        super(generator);
+    public DiscoverCraftingRecipes(PackOutput out) {
+        super(out);
     }
 
     @Override
-    protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
+    protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         DiscoverShapedRecipeBuilder.shaped("anthracite_torch", Blocks.TORCH, 8)
                 .define('#', Items.STICK)
                 .define('X', DiscoverItems.ANTHRACITE.get())
