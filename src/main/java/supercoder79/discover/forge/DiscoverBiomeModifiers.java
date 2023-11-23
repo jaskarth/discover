@@ -10,6 +10,7 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.common.world.BiomeModifier;
@@ -19,29 +20,29 @@ import supercoder79.discover.Discover;
 
 public class DiscoverBiomeModifiers {
     public static void bootstrap(BootstapContext<BiomeModifier> ctx) {
-        RegistryOps<JsonElement> ops = RegistryOps.create(JsonOps.INSTANCE, VanillaRegistries.createLookup());
+        HolderGetter<Biome> biomeLookup = ctx.lookup(Registries.BIOME);
 
         HolderGetter<PlacedFeature> placed = ctx.lookup(Registries.PLACED_FEATURE);
         BiomeModifier addSulfur = new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                HolderSet.emptyNamed(ops.owner(Registries.BIOME).get(), BiomeTags.IS_NETHER),
+                biomeLookup.getOrThrow(BiomeTags.IS_NETHER),
                 HolderSet.direct(placed
                         .getOrThrow(ResourceKey.create(Registries.PLACED_FEATURE, Discover.id("sulfur_ore")))),
                 GenerationStep.Decoration.RAW_GENERATION);
 
         BiomeModifier addKimberlite = new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                HolderSet.emptyNamed(ops.owner(Registries.BIOME).get(), BiomeTags.IS_OVERWORLD),
+                biomeLookup.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(placed
                         .getOrThrow(ResourceKey.create(Registries.PLACED_FEATURE, Discover.id("kimberlite_pipe")))),
                 GenerationStep.Decoration.RAW_GENERATION);
 
         BiomeModifier addAnthracite = new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                HolderSet.emptyNamed(ops.owner(Registries.BIOME).get(), BiomeTags.IS_OVERWORLD),
+                biomeLookup.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(placed
                         .getOrThrow(ResourceKey.create(Registries.PLACED_FEATURE, Discover.id("anthracite")))),
                 GenerationStep.Decoration.RAW_GENERATION);
 
         BiomeModifier addLignite = new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                HolderSet.emptyNamed(ops.owner(Registries.BIOME).get(), BiomeTags.IS_OVERWORLD),
+                biomeLookup.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(placed
                         .getOrThrow(ResourceKey.create(Registries.PLACED_FEATURE, Discover.id("lignite")))),
                 GenerationStep.Decoration.RAW_GENERATION);

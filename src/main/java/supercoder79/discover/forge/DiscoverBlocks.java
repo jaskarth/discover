@@ -14,6 +14,7 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import supercoder79.discover.Discover;
 import supercoder79.discover.content.items.DiscoverTab;
+import supercoder79.discover.content.reg.DiscoverRegistrate;
 
 public class DiscoverBlocks {
     public static BlockEntry<Block> KIMBERLITE;
@@ -21,7 +22,7 @@ public class DiscoverBlocks {
     public static BlockEntry<Block> LIGNITE;
     public static BlockEntry<DropExperienceBlock> SULFUR_ORE;
 
-    public static void register(CreateRegistrate registrate) {
+    public static void register(DiscoverRegistrate registrate) {
         registrate = registrate.setCreativeTab(DiscoverTab.TAB);
 
         KIMBERLITE = registrate.block("kimberlite", Block::new).properties(

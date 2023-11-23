@@ -1,4 +1,8 @@
-// 1.20.1	2023-11-18T01:02:50.915871548	Dynamic registry content
+// 1.20.1	2023-11-18T18:31:03.871538517	Dynamic registry content
+dd92cd1dc792ab6a2d99d87f829d5e7a4d8191fe data/discover/forge/biome_modifier/add_anthracite.json
+05eea1ded597394b65b05cf0fab8b51e0be71eee data/discover/forge/biome_modifier/add_kimberlite.json
+abcc3c3bd164e92a39e321a8446d7f7c7641dd07 data/discover/forge/biome_modifier/add_lignite.json
+74745e4cdd5a3ad321c1790a3fe36724f0931dc4 data/discover/forge/biome_modifier/add_sulfur.json
 9dce6a526183a53385190285818ce385355f3159 data/discover/worldgen/configured_feature/anthracite.json
 5ecaacea77df6efaf0b1e0e24028581ab98b053e data/discover/worldgen/configured_feature/kimberlite_pipe.json
 f669b859b510f930c44400e4e54407af9bd17408 data/discover/worldgen/configured_feature/lignite.json

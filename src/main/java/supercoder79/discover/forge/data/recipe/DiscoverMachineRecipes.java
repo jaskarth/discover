@@ -4,6 +4,7 @@ import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeBuilder;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipeSerializer;
 import com.simibubi.create.foundation.recipe.IRecipeTypeInfo;
+import com.simibubi.create.foundation.utility.RegisteredObjects;
 import net.minecraft.data.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -41,14 +42,9 @@ public abstract class DiscoverMachineRecipes extends DiscoverRecipeProvider {
 
 			@Override
 			public CompletableFuture<?> run(CachedOutput cache) {
-				GENERATORS.forEach(g -> {
-					try {
-						g.run(cache);
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				});
-				return CompletableFuture.completedFuture(null);
+				return CompletableFuture.allOf(GENERATORS.stream()
+						.map(gen -> gen.run(cache))
+						.toArray(CompletableFuture[]::new));
 			}
 		});
 	}
@@ -65,12 +61,12 @@ public abstract class DiscoverMachineRecipes extends DiscoverRecipeProvider {
 																	 Supplier<ItemLike> singleIngredient, UnaryOperator<ProcessingRecipeBuilder<T>> transform) {
 		ProcessingRecipeSerializer<T> serializer = getSerializer();
 		GeneratedRecipe generatedRecipe = c -> {
-			ItemLike iItemProvider = singleIngredient.get();
+			ItemLike itemLike = singleIngredient.get();
 			transform
-				.apply(new ProcessingRecipeBuilder<>(serializer.getFactory(),
-					new ResourceLocation(namespace, ForgeRegistries.ITEMS.getKey(iItemProvider.asItem())
-						.getPath())).withItemIngredients(Ingredient.of(iItemProvider)))
-				.build(c);
+					.apply(new ProcessingRecipeBuilder<>(serializer.getFactory(),
+							new ResourceLocation(namespace, RegisteredObjects.getKeyOrThrow(itemLike.asItem())
+									.getPath())).withItemIngredients(Ingredient.of(itemLike)))
+					.build(c);
 		};
 		all.add(generatedRecipe);
 		return generatedRecipe;

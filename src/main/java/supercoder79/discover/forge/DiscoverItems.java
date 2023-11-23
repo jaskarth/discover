@@ -6,6 +6,7 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import net.minecraft.world.item.Item;
 import supercoder79.discover.Discover;
 import supercoder79.discover.content.items.DiscoverTab;
+import supercoder79.discover.content.reg.DiscoverRegistrate;
 
 public class DiscoverItems {
 
@@ -27,7 +28,7 @@ public class DiscoverItems {
     public static ItemEntry<CombustibleItem> ANTHRACITE;
     public static ItemEntry<CombustibleItem> LIGNITE;
 
-    public static void register(CreateRegistrate registrate) {
+    public static void register(DiscoverRegistrate registrate) {
         registrate = registrate.setCreativeTab(DiscoverTab.TAB);
 
         CONSTANTAN_INGOT = registrate.item("constantan_ingot", Item::new)

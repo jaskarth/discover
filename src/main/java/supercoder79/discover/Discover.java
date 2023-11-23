@@ -29,7 +29,7 @@ import java.util.concurrent.CompletableFuture;
 @Mod("discover")
 public class Discover {
     public static final Logger LOGGER = LogUtils.getLogger();
-    public static final NonNullSupplier<CreateRegistrate> REGISTRATE = DiscoverRegistrate.discover("discover");
+    public static final NonNullSupplier<DiscoverRegistrate> REGISTRATE = DiscoverRegistrate.discover("discover");
 
 
     public Discover() {
@@ -38,7 +38,7 @@ public class Discover {
         IEventBus b = FMLJavaModLoadingContext.get().getModEventBus();
         DiscoverTab.REGISTER.register(b);
 
-        CreateRegistrate r = REGISTRATE.get();
+        DiscoverRegistrate r = REGISTRATE.get();
         DiscoverBlocks.register(r);
         DiscoverItems.register(r);
         DiscoverFluids.register(r);

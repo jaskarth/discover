@@ -1,4 +1,4 @@
-// 1.20.1	2023-11-18T01:11:23.588599339	Discover's Machine Recipes
+// 1.20.1	2023-11-23T10:44:45.846074173	Discover's Machine Recipes
 c626cf3c3c1c8937c2ec408a30fb32efd5ac71c6 data/discover/recipes/crushing/anthracite.json
 770783c10280f8ef05d39a23b75e61558b74177e data/discover/recipes/crushing/kimberlite.json
 e95017bc594b7f9e26b7ce1082c342a26aa85212 data/discover/recipes/crushing/lignite.json
@@ -18,3 +18,4 @@ d66fb8c2abef013ff9774d5a86fe900251dd07ed data/discover/recipes/mixing/sulfuric_a
 cdbc9c52df783c6ad0f0dad5bba81426fcc78d0d data/discover/recipes/splashing/treated_crimsite.json
 e3464e6643e838e9b01c46eef5b526d7fc1b01dd data/discover/recipes/splashing/treated_kimberlite.json
 f77384fca16c3a122627e1b51213bb829a38ad21 data/discover/recipes/splashing/treated_ochrum.json
+1e35857bb5f7691c7fe069b7806c78bc1d32177e data/discover/recipes/splashing/treated_veridium.json
